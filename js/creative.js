@@ -1,5 +1,5 @@
 (function($) {
-  "use strict"; // Start of use strict
+  'use strict'; // Start of use strict
 
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
@@ -7,9 +7,16 @@
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top - 72)
-        }, 1000, "easeInOutExpo");
+        $('html, body').animate(
+          {
+            scrollTop: target.offset().top
+          },
+          500,
+          'easeInOutExpo'
+        );
+
+        $('#mainNav').removeClass('navbar-shadow');
+
         return false;
       }
     }
@@ -27,32 +34,78 @@
   });
 
   // Collapse Navbar
-  var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 100) {
-      $("#mainNav").addClass("navbar-scrolled");
+  var navbarCollapse = function(e) {
+    var mainNav = $('#mainNav').offset().top;
+
+    var devTop = Math.round($('#dev').offset().top);
+    var devBottom = devTop + Math.round($('#dev').outerHeight());
+    var languagesTop = Math.round($('#languages').offset().top);
+    var languagesBottom = languagesTop + Math.round($('#languages').outerHeight());
+    var snippetTop = Math.floor($('#snippet').offset().top);
+    var snippetBottom = snippetTop + Math.round($('#snippet').outerHeight());
+    var osTop = Math.round($('#os').offset().top);
+    var osBottom = osTop + Math.round($('#os').outerHeight());
+
+    //
+    if (mainNav > 100) {
+      //$('#mainNav').addClass('navbar-shadow');
     } else {
-      $("#mainNav").removeClass("navbar-scrolled");
+      $('#mainNav').removeClass('navbar-shadow');
     }
+
+    if (mainNav == devTop || mainNav == languagesTop || mainNav == snippetTop || mainNav == osTop) {
+      $('#mainNav').removeClass('navbar-shadow');
+    } else {
+      // $('#mainNav').addClass('navbar-shadow');
+    }
+
+    if (mainNav < devTop && mainNav > 100) {
+      $('#mainNav').addClass('bg-violet');
+    } else {
+      $('#mainNav').removeClass('bg-violet');
+    }
+    //
+    if (mainNav < devBottom && mainNav >= devTop) {
+      $('#mainNav').addClass('bg-midnight-blue');
+    } else {
+      $('#mainNav').removeClass('bg-midnight-blue');
+    }
+
+    //
+    if (mainNav < languagesBottom && mainNav >= languagesTop) {
+      $('#mainNav').addClass('bg-white');
+      $('#mainNav a').addClass('text-dark');
+      $('#mainNav a').addClass('nav-dark');
+    } else {
+      $('#mainNav').removeClass('bg-white');
+      $('#mainNav a').removeClass('text-dark');
+      $('#mainNav a').removeClass('nav-dark');
+    }
+
+    //
+    if (mainNav < snippetBottom && mainNav >= snippetTop) {
+      $('#mainNav').addClass('bg-dark-gray');
+      $('#mainNav a').addClass('text-darker');
+      $('#mainNav a').addClass('nav-darker');
+    } else {
+      $('#mainNav').removeClass('bg-dark-gray');
+      $('#mainNav a').removeClass('text-darker');
+      $('#mainNav a').removeClass('nav-darker');
+    }
+
+    //
+    if (mainNav < osBottom && mainNav >= osTop) {
+      $('#mainNav').addClass('bg-crimson');
+    } else {
+      $('#mainNav').removeClass('bg-crimson');
+    }
+
+    console.log(mainNav, snippetTop, snippetBottom);
   };
+
   // Collapse now if page is not at top
   navbarCollapse();
+
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
-
-  // Magnific popup calls
-  $('#portfolio').magnificPopup({
-    delegate: 'a',
-    type: 'image',
-    tLoading: 'Loading image #%curr%...',
-    mainClass: 'mfp-img-mobile',
-    gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0, 1]
-    },
-    image: {
-      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-    }
-  });
-
 })(jQuery); // End of use strict
