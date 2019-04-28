@@ -1,0 +1,159 @@
+.landing-divider {
+  display: block;
+  height: 1px;
+  border: 0;
+
+  margin: 1em 0em 2em 0em;
+
+  background: linear-gradient(-45deg, transparent, #fff, transparent);
+}
+
+.header-content h1 {
+  font-family: 'Fira Sans', sans-serif;
+  text-align: center;
+  line-height: 1;
+  font-weight: 100;
+  font-size: 50pt;
+  margin-top: 0;
+}
+
+.header-content h2 {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1;
+  font-size: 20pt;
+  margin-bottom: 0;
+  font-variant: small-caps;
+  font-variant: common-ligatures small-caps;
+}
+
+.header-content ul {
+  font-family: 'Montserrat', serif;
+  text-align: left;
+  font-size: 16pt;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+header.overlay {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 72px);
+
+  background: -webkit-gradient(-45deg, #371329, #5f263d, #883a3f, #215480) !important;
+  background: linear-gradient(-45deg, #371329, #5f263d, #883a3f, #215480) !important;
+  background-size: 300% 300% !important;
+
+  animation: change 60s ease-in-out infinite !important;
+}
+
+@media (min-width: 360px) {
+  header.overlay {
+    padding-top: 5rem !important;
+  }
+
+  .header-content h1 {
+    font-size: 36pt !important;
+  }
+
+  .header-content h2 {
+    font-size: 18pt !important;
+  }
+
+  .header-content ul {
+    font-size: 12pt !important;
+  }
+}
+
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.nav-link i {
+  font-size: 16pt !important;
+}
+
+.btn-resume {
+  background-color: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 6px 15px;
+
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-resume i {
+  margin-right: 1em;
+}
+
+.btn-resume:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+.email-link {
+  background-color: transparent;
+  padding: 6px 15px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.email-link:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+p {
+  text-align: left;
+  white-space: pre-line;
+}
+
+.fixed-height {
+  font-size: 64px !important;
+}
+
+.link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+.link:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.fira-code {
+  font-family: 'Fira Code', monospace;
+  font-feature-settings: 'calt' 1;
+  font-size: 11pt;
+}
+
+.section-code {
+  /* height: 100%; */
+
+  background: linear-gradient(90deg, #ffffff 50%, #f8f9fa 50%);
+}
+
+.section-test {
+  background: #dfe1e8;
+  display: block;
+  overflow-x: none;
+}
+
+.section-title {
+  font-variant: small-caps;
+  font-variant: common-ligatures small-caps;
+}
+
+.bg-dark-gray {
+  background-color: #dfe1e8 !important;
+}
