@@ -157,3 +157,7 @@ p {
 .bg-dark-gray {
   background-color: #dfe1e8 !important;
 }
+
+.divider{
+  border-left:1px solid #e8ecfa !important;
+}
