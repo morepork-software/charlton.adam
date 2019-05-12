@@ -1,14 +1,17 @@
-# charlton.adam.github.io
-Adam Charlton Portfolio Site
+# charlton.adam.portfolio
 
-## Desktop
+Portfolio website, employers can view, contact and download my resume.
+
+Information about Active projects, Operating System experience, Programming languages and Helloworld code snippets.
+
+### Desktop
 
 [![Generic badge](https://img.shields.io/badge/Status-Active-Green.svg)](https://shields.io/)
 
-## Tablet
+### Tablet
 
 [![Generic badge](https://img.shields.io/badge/Status-WIP-Orange.svg)](https://shields.io/)
 
-## Mobile
+### Mobile
 
 [![Generic badge](https://img.shields.io/badge/Status-WIP-Orange.svg)](https://shields.io/)
