@@ -177,13 +177,13 @@ sup {
 }
 
 a {
-  color: #f4623a;
+  color: #6c757d;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #d6370c;
+  color: #ffffff;
   text-decoration: underline;
 }
 
@@ -4599,7 +4599,7 @@ input[type='button'].btn-block {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color: #495057 !important;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -4617,7 +4617,7 @@ input[type='button'].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #222;
-  background-color: #f4623a;
+  background-color: #757685;
 }
 
 .nav-fill .nav-item {
@@ -10825,7 +10825,9 @@ a.text-light:focus {
   color: #343a40 !important;
 }
 
-a.text-dark:hover,
+a.text-dark:hover {
+  color: #121416 !important;
+}
 a.text-dark:focus {
   color: #121416 !important;
 }
@@ -11045,8 +11047,14 @@ hr.dark {
 #mainNav .navbar-nav .nav-item .nav-dark.active {
   color: rgba(25, 25, 25, 0.5) !important;
 }
+#mainNav .navbar-nav .nav-item .nav-dark:hover {
+  color: rgba(25, 25, 25, 0.5) !important;
+}
 
 #mainNav .navbar-nav .nav-item .nav-darker.active {
+  color: rgba(25, 25, 25, 0.5) !important;
+}
+#mainNav .navbar-nav .nav-item .nav-darker:hover {
   color: rgba(25, 25, 25, 0.5) !important;
 }
 
@@ -11091,7 +11099,8 @@ hr.dark {
     /* color: #212529; */
   }
   #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
-    color: #f4623a;
+    /* color: #f4623a; */
+    color: #252525;
   }
 }
 

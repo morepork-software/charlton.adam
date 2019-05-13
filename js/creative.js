@@ -45,33 +45,24 @@
     var snippetBottom = snippetTop + Math.round($('#snippet').outerHeight());
     var osTop = Math.round($('#os').offset().top);
     var osBottom = osTop + Math.round($('#os').outerHeight());
-
-    //
-    if (mainNav > 100) {
-      //$('#mainNav').addClass('navbar-shadow');
-    } else {
-      $('#mainNav').removeClass('navbar-shadow');
-    }
-
-    if (mainNav == devTop || mainNav == languagesTop || mainNav == snippetTop || mainNav == osTop) {
-      $('#mainNav').removeClass('navbar-shadow');
-    } else {
-      // $('#mainNav').addClass('navbar-shadow');
-    }
-
+    var contactTop = Math.round($('#contact').offset().top);
+    var contactBottom = contactTop + Math.round($('#contact').outerHeight());
+    
+    // Landing
     if (mainNav < devTop && mainNav > 100) {
       $('#mainNav').addClass('bg-violet');
     } else {
       $('#mainNav').removeClass('bg-violet');
     }
-    //
+
+    // Development Section
     if (mainNav < devBottom && mainNav >= devTop) {
       $('#mainNav').addClass('bg-midnight-blue');
     } else {
       $('#mainNav').removeClass('bg-midnight-blue');
     }
 
-    //
+    // Languages
     if (mainNav < languagesBottom && mainNav >= languagesTop) {
       $('#mainNav').addClass('bg-white');
       $('#mainNav a').addClass('text-dark');
@@ -82,7 +73,7 @@
       $('#mainNav a').removeClass('nav-dark');
     }
 
-    //
+    // Code Snippets
     if (mainNav < snippetBottom && mainNav >= snippetTop) {
       $('#mainNav').addClass('bg-dark-gray');
       $('#mainNav a').addClass('text-darker');
@@ -93,14 +84,19 @@
       $('#mainNav a').removeClass('nav-darker');
     }
 
-    //
+    // Operating Systems
     if (mainNav < osBottom && mainNav >= osTop) {
       $('#mainNav').addClass('bg-crimson');
     } else {
       $('#mainNav').removeClass('bg-crimson');
     }
 
-    console.log(mainNav, snippetTop, snippetBottom);
+    // Contact Section
+    if (mainNav < contactBottom && mainNav >= contactTop) {
+      $('#mainNav').addClass('bg-brown');
+    } else {
+      $('#mainNav').removeClass('bg-brown');
+    }
   };
 
   // Collapse now if page is not at top
